@@ -31,7 +31,7 @@ public class robot_main : MonoBehaviour
         }
     }
 
-    void spawn()
+    public void spawn()
     {
         roobt_current_spawn_point_count++;
         robot_current_spawn_point = robot_spawn_points[roobt_current_spawn_point_count];
@@ -44,4 +44,9 @@ public class robot_main : MonoBehaviour
         GameObject _ball = Instantiate(robot_ball, robot_fire_transform.position, robot_fire_transform.rotation);
         Destroy(_ball, 10f);
     }
+
+    
+
+
+
 }

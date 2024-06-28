@@ -36,6 +36,20 @@ public class cat_logic : MonoBehaviour
         {
             game_game_manager.defeat();
         }
+
+        else if (other.gameObject.tag == "robot")
+        {
+            Debug.Log("SUCESS" + other.gameObject.name);
+            if(other.gameObject.TryGetComponent<robot_main>(out robot_main _robot)) 
+            {
+                _robot.spawn();
+                Debug.Log(" SUP SUCESS" + other.gameObject.name);
+
+            }
+        }
+
+
+
     }
 
 
