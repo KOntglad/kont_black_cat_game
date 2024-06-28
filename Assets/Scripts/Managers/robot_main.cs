@@ -6,11 +6,14 @@ public class robot_main : MonoBehaviour
 {
     public Transform[] robot_spawn_points;
     public Transform robot_current_spawn_point;
+    public Transform player_transform;
     public int roobt_current_spawn_point_count;
     public Animator robot_animator;
 
     public GameObject robot_ball;
     public Transform robot_fire_transform;
+    public float ball_destroy_second;
+
 
     public float ball_fire_now;
     public float ball_fire_max;
@@ -41,8 +44,9 @@ public class robot_main : MonoBehaviour
 
     void fire() 
     {
+        robot_fire_transform.LookAt(player_transform);
         GameObject _ball = Instantiate(robot_ball, robot_fire_transform.position, robot_fire_transform.rotation);
-        Destroy(_ball, 10f);
+        Destroy(_ball, ball_destroy_second);
     }
 
     

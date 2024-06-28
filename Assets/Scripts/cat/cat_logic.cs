@@ -43,11 +43,24 @@ public class cat_logic : MonoBehaviour
             if(other.gameObject.TryGetComponent<robot_main>(out robot_main _robot)) 
             {
                 _robot.spawn();
-                Debug.Log(" SUP SUCESS" + other.gameObject.name);
+                Debug.Log("SUP SUCESS " + other.gameObject.name);
 
             }
+           
+        
         }
+         else if (other.gameObject.tag == "cinematic") 
+        {
+            if (other.gameObject.TryGetComponent<Animator>(out Animator _cine))
+            {
+                _cine.SetBool("start", true);
+                Debug.Log("SUP SUCESS " + other.gameObject.name);
 
+            }
+
+
+
+        }
 
 
     }
